@@ -1,0 +1,11 @@
+build_base:
+  image: docker:git
+  services:
+    - docker:dind
+  script:
+    - git clone https://github.com/vmware/photon.git photon --depth 1 -b master
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker build -t registry.gitlab.com/gbraad/photon ./photon
+    - docker push registry.gitlab.com/gbraad/photon
+  only:
+    - master
