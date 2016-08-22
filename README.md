@@ -9,6 +9,8 @@ Build wrapper for [Photon](https://github.com/vmware/photon).
 Usage
 -----
 
+  * Photon 1.0  
+    `docker pull registry.gitlab.com/gbraad/photon:1.0`
   * ...
 
 
